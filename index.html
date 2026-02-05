@@ -4,244 +4,280 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Keystone Backflow Services | West Central Florida</title>
-  <meta name="description" content="Keystone Backflow Services provides certified backflow testing, repairs, maintenance, and compliance reporting throughout West Central Florida." />
+  <meta name="description" content="Professional backflow testing, repairs, maintenance, and compliance reporting in West Central Florida." />
+
   <style>
     :root {
-      --primary-red: #e53935;
-      --primary-orange: #fb8c00;
-      --dark-gray: #1f1f1f;
-      --light-gray: #f5f5f5;
+      --red: #d32f2f;
+      --orange: #f57c00;
+      --steel: #2b2b2b;
+      --gray: #eaeaea;
+      --light: #ffffff;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: 'Arial', 'Helvetica', sans-serif;
-      color: var(--dark-gray);
-      background: #ffffff;
-      line-height: 1.6;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--light);
+      color: var(--steel);
     }
 
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
     header {
-      background: linear-gradient(90deg, var(--primary-red), var(--primary-orange));
-      color: #fff;
-      padding: 1.5rem 1rem;
+      background: var(--light);
+      border-bottom: 4px solid var(--red);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .header-flex {
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .logo img {
+    .nav img {
       height: 70px;
     }
 
-    .phone {
+    .nav-phone {
       font-size: 1.2rem;
-      font-weight: bold;
+      font-weight: 700;
+      color: var(--red);
     }
 
-    .phone a {
-      color: #fff;
-      text-decoration: none;
-    }
-
+    /* ===== HERO ===== */
     .hero {
-      background: var(--light-gray);
-      padding: 4rem 1rem;
-      text-align: center;
+      background: linear-gradient(135deg, #f5f5f5 60%, #ffffff 60%);
+      padding: 5rem 1rem;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
     }
 
     .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      margin: 0 0 1rem;
     }
 
     .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
+      font-size: 1.25rem;
+      max-width: 600px;
     }
 
-    .cta {
+    .hero-cta {
       display: inline-block;
-      background: linear-gradient(90deg, var(--primary-red), var(--primary-orange));
-      color: #fff;
-      padding: 0.9rem 1.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 4px;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+      color: white;
+      font-weight: 700;
+      border-radius: 6px;
     }
 
-    section {
-      padding: 3rem 1rem;
-    }
-
-    section h2 {
+    .hero-badge {
+      border: 3px solid var(--steel);
+      padding: 2rem;
       text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2rem;
+      font-weight: 700;
+      background: white;
+    }
+
+    .hero-badge span {
+      display: block;
+      font-size: 2.2rem;
+      color: var(--red);
+    }
+
+    /* ===== SERVICES ===== */
+    section {
+      padding: 4rem 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 3rem;
     }
 
     .services {
+      max-width: 1200px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
     }
 
-    .service-card {
-      border: 2px solid var(--light-gray);
-      padding: 1.5rem;
-      border-radius: 6px;
+    .service {
+      border: 2px solid var(--gray);
+      padding: 2rem;
+      background: white;
+      position: relative;
+    }
+
+    .service::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--red), var(--orange));
+    }
+
+    .service h3 {
+      margin-top: 1rem;
+      color: var(--red);
+    }
+
+    /* ===== STRIP ===== */
+    .strip {
+      background: var(--steel);
+      color: white;
       text-align: center;
-      background: #fff;
+      padding: 3rem 1rem;
     }
 
-    .service-card h3 {
-      margin-top: 0;
-      color: var(--primary-red);
+    .strip strong {
+      color: var(--orange);
     }
 
-    .service-card p {
-      font-size: 0.95rem;
-    }
-
+    /* ===== ABOUT ===== */
     .about {
-      background: var(--light-gray);
+      background: #f7f7f7;
     }
 
-    .about p {
-      max-width: 800px;
-      margin: 0 auto;
+    .about-inner {
+      max-width: 900px;
+      margin: auto;
       text-align: center;
+      font-size: 1.15rem;
     }
 
+    /* ===== CONTACT ===== */
     .contact {
       text-align: center;
     }
 
-    .contact p {
-      font-size: 1.1rem;
+    .contact a {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--red);
     }
 
+    /* ===== FOOTER ===== */
     footer {
-      background: var(--dark-gray);
-      color: #fff;
+      background: #1b1b1b;
+      color: #ccc;
       text-align: center;
-      padding: 1.5rem 1rem;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
     }
 
-    footer span {
-      color: var(--primary-orange);
-    }
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
 
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .logo img { height: 55px; }
+      .hero h1 { font-size: 2.4rem; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="container header-flex">
-      <div class="logo">
-        <img src="HQ transparent-01.png" alt="Keystone Backflow Services Logo" />
-      </div>
-      <div class="phone">
-        Call Now: <a href="tel:8137611314">(813) 761‑1314</a>
-      </div>
+<header>
+  <div class="nav">
+    <img src="HQ transparent-01.png" alt="Keystone Backflow Services" />
+    <div class="nav-phone">
+      <a href="tel:8137611314">(813) 761-1314</a>
     </div>
-  </header>
+  </div>
+</header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Certified Backflow Protection You Can Trust</h1>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Serious Protection for Florida’s Water Supply</h1>
       <p>
-        Keystone Backflow Services delivers reliable, code‑compliant backflow testing,
-        repairs, and reporting for residential, commercial, and municipal systems
-        throughout West Central Florida.
+        Keystone Backflow Services provides certified testing, precision repairs,
+        preventative maintenance, and full compliance reporting across
+        West Central Florida.
       </p>
-      <a class="cta" href="tel:8137611314">Schedule Service</a>
+      <a class="hero-cta" href="tel:8137611314">Schedule Service</a>
     </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="services">
-        <div class="service-card">
-          <h3>Backflow Testing</h3>
-          <p>
-            Certified annual and routine backflow testing to ensure your system
-            meets all local and state requirements.
-          </p>
-        </div>
-        <div class="service-card">
-          <h3>Repairs & Maintenance</h3>
-          <p>
-            Fast, dependable repairs and preventative maintenance to keep your
-            backflow preventers operating at peak performance.
-          </p>
-        </div>
-        <div class="service-card">
-          <h3>Compliance Reporting</h3>
-          <p>
-            We handle all required documentation and submissions so you stay in
-            compliance with water authorities—no headaches.
-          </p>
-        </div>
-      </div>
+    <div class="hero-badge">
+      <span>100%</span>
+      Code-Compliant<br />Backflow Protection
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="about">
-    <div class="container">
-      <h2>Why Keystone Backflow Services</h2>
+<section>
+  <h2 class="section-title">Backflow Services</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Certified Testing</h3>
       <p>
-        Built on precision, accountability, and integrity, Keystone Backflow
-        Services takes a no‑nonsense approach to protecting Florida’s water supply.
-        We show up on time, do the job right, and stand behind our work.
+        Annual and routine backflow testing performed by certified professionals
+        to meet city, county, and state requirements.
       </p>
     </div>
-  </section>
-
-  <section class="contact">
-    <div class="container">
-      <h2>Get Started Today</h2>
+    <div class="service">
+      <h3>Repairs & Maintenance</h3>
       <p>
-        Serving West Central Florida • Residential • Commercial • Municipal
+        From failed tests to preventative servicing, we keep your backflow
+        preventers operating reliably year-round.
       </p>
-      <p>
-        <strong>Phone:</strong> <a href="tel:8137611314">(813) 761‑1314</a>
-      </p>
-      <a class="cta" href="tel:8137611314">Request Service</a>
     </div>
-  </section>
+    <div class="service">
+      <h3>Compliance Reporting</h3>
+      <p>
+        We submit all test results and documentation directly to the appropriate
+        water authorities so you stay compliant without the hassle.
+      </p>
+    </div>
+  </div>
+</section>
 
-  <footer>
+<div class="strip">
+  Serving <strong>West Central Florida</strong> • Residential • Commercial • Municipal
+</div>
+
+<section class="about">
+  <div class="about-inner">
+    <h2 class="section-title">Why Keystone</h2>
     <p>
-      © <span>Keystone Backflow Services</span> • West Central Florida
+      Keystone Backflow Services is built on accountability, precision, and
+      no-excuses workmanship. We respect your time, protect your water system,
+      and handle compliance from start to finish.
     </p>
-  </footer>
+  </div>
+</section>
+
+<section class="contact">
+  <h2 class="section-title">Call Today</h2>
+  <p>
+    Fast scheduling. Clear pricing. Professional results.
+  </p>
+  <p>
+    <a href="tel:8137611314">(813) 761-1314</a>
+  </p>
+</section>
+
+<footer>
+  © Keystone Backflow Services • West Central Florida
+</footer>
 
 </body>
 </html>
