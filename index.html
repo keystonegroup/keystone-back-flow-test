@@ -83,6 +83,10 @@
       position: relative;
       max-width: 1200px;
       margin: auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
     }
 
     .hero h1 {
@@ -92,7 +96,7 @@
 
     .hero p {
       font-size: 1.25rem;
-      max-width: 700px;
+      max-width: 600px;
     }
 
     .hero-cta {
@@ -103,6 +107,22 @@
       color: #fff;
       font-weight: 800;
       border-radius: 6px;
+    }
+
+    .hero-badge {
+      background: #ffffff;
+      border: 3px solid var(--steel);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-weight: 800;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .hero-badge span {
+      display: block;
+      font-size: 2.6rem;
+      color: var(--red);
+      margin-bottom: 0.5rem;
     }
 
     /* ================= SERVICES ================= */
@@ -182,7 +202,13 @@
     /* ================= RESPONSIVE ================= */
 
     @media (max-width: 900px) {
-      .hero h1 { font-size: 2.4rem; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
 
       .wordmark {
         height: 50px;
@@ -209,12 +235,21 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <h1>Certified Backflow Protection You Can Trust</h1>
-      <p>
-        Keystone Backflow Services provides professional testing, repairs,
-        maintenance, and compliance reporting throughout West Central Florida.
-      </p>
-      <a class="hero-cta" href="tel:8137611314">Schedule Service</a>
+      <div>
+        <h1>Serious Protection for Florida’s Water Supply</h1>
+        <p>
+          Keystone Backflow Services provides certified testing, precision repairs,
+          preventative maintenance, and full compliance reporting throughout
+          West Central Florida.
+        </p>
+        <a class="hero-cta" href="tel:8137611314">Schedule Service</a>
+      </div>
+
+      <div class="hero-badge">
+        <span>100%</span>
+        Code-Compliant<br />
+        Backflow Protection
+      </div>
     </div>
   </section>
 
@@ -224,26 +259,15 @@
     <div class="services">
       <div class="service">
         <h3>Backflow Testing</h3>
-        <p>
-          Certified annual and routine testing to meet all local and state
-          requirements.
-        </p>
+        <p>Certified annual and routine testing to meet all local and state requirements.</p>
       </div>
-
       <div class="service">
         <h3>Repairs & Maintenance</h3>
-        <p>
-          Reliable repairs and preventative maintenance to keep your backflow
-          systems operating correctly.
-        </p>
+        <p>Reliable repairs and preventative maintenance to keep systems compliant.</p>
       </div>
-
       <div class="service">
         <h3>Compliance Reporting</h3>
-        <p>
-          We submit all required documentation directly to water authorities so
-          you stay compliant without the paperwork.
-        </p>
+        <p>We submit all required documentation directly to water authorities.</p>
       </div>
     </div>
   </section>
